@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            long sayi;
+            ulong toplam = 0;
+
+            bool asal = true;
+
+
+
+            for (sayi = 2; sayi < 2000000; sayi++)
+            {
+                asal = true; // en onemli adim 
+                for (int i = 2; i <= sayi / 2; i++)
+
+                    if (sayi % i == 0)
+                    {
+                        asal = false;
+                        break;
+                    }
+                if (asal)
+                {
+                    toplam+=Convert.ToUInt32 (sayi);
+                }
+
+            }
+            Console.WriteLine("toplam=" + toplam);
+            Console.ReadLine();
+
+        }
+    }
+}
